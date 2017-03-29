@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+// Rule: Always ONE component per file!!!
 // Create a new component. It should produce HTML
 // const = ES6 constant
 // App here is a TYPE
-const App = function () {
+// => is a replace for keyword "function"
+const App = => () {
   // This is JSX code
   return <div>Hi!</div>;
 }
