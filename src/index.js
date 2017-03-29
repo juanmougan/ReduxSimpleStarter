@@ -1,14 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import SearchBar from './components/search_bar'
+
+const API_KEY = 'AIzaSyCi59ri4rwYce45nBWWcU_Tg3DDsgPQu8g';
+
 // Rule: Always ONE component per file!!!
 // Create a new component. It should produce HTML
 // const = ES6 constant
 // App here is a TYPE
 // => is a replace for keyword "function"
-const App = => () {
+const App = () => {
   // This is JSX code
-  return <div>Hi!</div>;
+  return (
+  <div>
+  	<SearchBar />
+  </div>
+  );
 }
 
 // Take this component's generated HTML, put it on the page
