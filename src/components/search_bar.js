@@ -9,7 +9,14 @@ class SearchBar extends Component {
   // It's a function
   render() {
   	// must return some JSX
-  	return <input />;
+  	// this.onInputChange is a reference to my input handler
+  	// {} is to reference JS' variables inside JSX
+  	return <input onChange = {this.onInputChange} />;
+  }
+
+  // also it could be "handleInputChange" (name is arbitrary)
+  onInputChange(event) {
+  	console.log(event.target.value);
   }
 }
 
