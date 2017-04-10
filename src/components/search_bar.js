@@ -12,7 +12,7 @@ class SearchBar extends Component {
   // First function called when obj is instantiated
   constructor(props) {
   	super(props);
-  	this.state = { term: '' };
+  	this.state = { term: 'Starting value' };
   }
 
   // every class based component must have a render method
@@ -23,7 +23,9 @@ class SearchBar extends Component {
   	// {} is to reference JS' variables inside JSX
   	return (
   	  <div>
-  	  	<input onChange = {event => this.setState({ term: event.target.value })} />
+        <input 
+  	  	value = {this.state.term}   // controlled component: its value is set by state
+        onChange = {event => this.setState({ term: event.target.value })} />
   	  </div>
   	);
   }
