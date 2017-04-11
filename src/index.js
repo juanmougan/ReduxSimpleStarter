@@ -19,7 +19,9 @@ class App extends Component {
   	this.state = { videos: [] };
 
   	YTSearch( {key: API_KEY, term: 'surfboards'}, (videos) => {
-  	  this.setState({ videos: videos });
+  	  // ES6 magic, expands to this.setState({ videos: videos });
+  	  // works when key and value are the same string
+  	  this.setState({ videos });
     } );
 
   }
