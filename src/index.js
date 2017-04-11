@@ -1,28 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 // the most parent component should fetch data
 import YTSearch from 'youtube-api-search'
-
 import SearchBar from './components/search_bar'
 
 const API_KEY = 'AIzaSyCi59ri4rwYce45nBWWcU_Tg3DDsgPQu8g';
-
-YTSearch( {key: API_KEY, term: 'surfboards'}, function(data) {
-  console.log(data);
-} );
 
 // Rule: Always ONE component per file!!!
 // Create a new component. It should produce HTML
 // const = ES6 constant
 // App here is a TYPE
 // => is a replace for keyword "function"
-const App = () => {
-  // This is JSX code
-  return (
-  <div>
-  	<SearchBar />
-  </div>
-  );
+class App extends Component {
+  
+  constructor(props) {
+  	super(props);
+
+  	this.state = { videos: [] };
+
+  	YTSearch( {key: API_KEY, term: 'surfboards'}, (videos) => {
+  	  this.setState({ videos: videos });
+    } );
+
+  }
+
+  render() {
+  	// This is JSX code
+  	return (
+  	  <div>
+  	    <SearchBar />
+      </div>
+    );
+  }
 }
 
 // Take this component's generated HTML, put it on the page
