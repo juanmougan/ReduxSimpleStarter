@@ -1,9 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+// the most parent component should fetch data
+import YTSearch from 'youtube-api-search'
 
 import SearchBar from './components/search_bar'
 
 const API_KEY = 'AIzaSyCi59ri4rwYce45nBWWcU_Tg3DDsgPQu8g';
+
+YTSearch( {key: API_KEY, term: 'surfboards'}, function(data) {
+  console.log(data);
+} );
 
 // Rule: Always ONE component per file!!!
 // Create a new component. It should produce HTML
