@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 // the most parent component should fetch data
 import YTSearch from 'youtube-api-search'
 import SearchBar from './components/search_bar'
+import VideoList from './components/video_list'
 
 const API_KEY = 'AIzaSyCi59ri4rwYce45nBWWcU_Tg3DDsgPQu8g';
 
@@ -26,11 +27,13 @@ class App extends Component {
 
   }
 
+  // passing props
   render() {
   	// This is JSX code
   	return (
   	  <div>
   	    <SearchBar />
+  	    <VideoList videos={this.state.videos} />
       </div>
     );
   }
