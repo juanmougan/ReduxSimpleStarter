@@ -5,7 +5,7 @@ const VideoList = (props) => {
   
   // React will render this array
   const videoItems = props.videos.map((video) => {
-  	return <VideoListItem video={video} />
+  	return <VideoListItem key={video.etag} video={video} />
   });
 
   // If this were a class component, I should access the props like this
