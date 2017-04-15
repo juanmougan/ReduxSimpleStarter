@@ -5,6 +5,7 @@ const VideoList = (props) => {
   
   // React will render this array
   const videoItems = props.videos.map((video) => {
+  	// If key isn't present, the whole list needs to be re-rendered
   	return <VideoListItem key={video.etag} video={video} />
   });
 
