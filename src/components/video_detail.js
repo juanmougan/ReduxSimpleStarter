@@ -2,6 +2,7 @@ import React from 'react';
 
 const VideoDetail = ({video}) => {
   
+  // Will render this until we get a real video from the API
   if (!video) {
   	return <div>Loading...</div>
   }
