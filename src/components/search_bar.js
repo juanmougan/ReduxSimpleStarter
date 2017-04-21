@@ -22,7 +22,7 @@ class SearchBar extends Component {
   	// this.onInputChange is a reference to my input handler
   	// {} is to reference JS' variables inside JSX
   	return (
-  	  <div>
+  	  <div className="search-bar">
         <input 
   	  	value = {this.state.term}   // controlled component: its value is set by state
         onChange = {event => this.setState({ term: event.target.value })} />
