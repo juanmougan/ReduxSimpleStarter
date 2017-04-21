@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 // the most parent component should fetch data
@@ -42,10 +43,13 @@ class App extends Component {
 
   // passing props
   render() {
+
+  	const videoSearch = _.debounce( (term) => { this.videoSearch(term) }, 300 );
+
   	// This is JSX code
   	return (
   	  <div>
-  	    <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+  	    <SearchBar onSearchTermChange={videoSearch} />
   	    <VideoDetail video={this.state.selectedVideo} />
   	    <VideoList 
   	      onVideoSelect={ 
