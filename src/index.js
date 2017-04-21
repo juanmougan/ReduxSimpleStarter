@@ -23,8 +23,13 @@ class App extends Component {
   	  selectedVideo: null
   	};
 
+  	this.videoSearch('surfboards');
+
+  }
+
+  videoSearch(term) {
   	// Setting state means re-render the component
-  	YTSearch( {key: API_KEY, term: 'surfboards'}, (videos) => {
+  	YTSearch( {key: API_KEY, term: term}, (videos) => {
   	  // ES6 magic, expands to this.setState({ videos: videos });
   	  // works when key and value are the same string
   	  this.setState({ 
@@ -32,7 +37,6 @@ class App extends Component {
   	  	selectedVideo: videos[0]
   	  });
     } );
-
   }
 
   // passing props
@@ -40,7 +44,7 @@ class App extends Component {
   	// This is JSX code
   	return (
   	  <div>
-  	    <SearchBar />
+  	    <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
   	    <VideoDetail video={this.state.selectedVideo} />
   	    <VideoList 
   	      onVideoSelect={ 
