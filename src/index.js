@@ -23,6 +23,7 @@ class App extends Component {
   	  selectedVideo: null
   	};
 
+  	// Default initial search
   	this.videoSearch('surfboards');
 
   }
